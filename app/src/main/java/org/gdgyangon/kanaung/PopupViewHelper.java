@@ -36,6 +36,7 @@ public abstract class PopupViewHelper implements View.OnClickListener {
     mMagic.setOnClickListener(this);
     mUnicodeEdit.setVisibility(View.INVISIBLE);
     inEditMode = false;
+    mMagic.setVisibility(View.GONE);
     mEditButton.setOnClickListener(this);
     mFullScreenButton.setOnClickListener(this);
     return view;
@@ -50,12 +51,14 @@ public abstract class PopupViewHelper implements View.OnClickListener {
         mUnicodeEdit.setVisibility(View.VISIBLE);
         mUnicodeEdit.invalidate();
         mUnicodeView.setVisibility(View.GONE);
+        mMagic.setVisibility(View.VISIBLE);
         mEditButton.setImageResource(R.drawable.ic_save_white_24dp);
         imm.showSoftInput(mUnicodeEdit, 0);
         inEditMode = true;
       } else {
         mUnicodeView.setVisibility(View.VISIBLE);
         mUnicodeEdit.setVisibility(View.GONE);
+        mMagic.setVisibility(View.GONE);
         mEditButton.setImageResource(R.drawable.ic_mode_edit_white_24dp);
         if (mUnicodeEdit.getText().length() > 0) {
           ClipboardManager clipboard = (ClipboardManager) mContext.getSystemService(Context.CLIPBOARD_SERVICE);
@@ -106,11 +109,11 @@ public abstract class PopupViewHelper implements View.OnClickListener {
                 + "\n"
                 + Converter.uni512zg1(mUnicodeEdit.getText().toString()));
         }
+      }else {
+        Toast toast = Toast.makeText(mContext, "Can't Do Magic on Empty Text!", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
       }
-    }else {
-      Toast toast = Toast.makeText(mContext, "Can't Do Magic on Empty Text!", Toast.LENGTH_SHORT);
-      toast.setGravity(Gravity.CENTER, 0, 0);
-      toast.show();
     }
   }
 

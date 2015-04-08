@@ -50,7 +50,7 @@ public class FlyService extends Service{
 
     params = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT,
         WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_PHONE,
-        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.TRANSLUCENT);
+        WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED|WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.TRANSLUCENT);
     params.softInputMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING;
     params.gravity = Gravity.TOP | Gravity.LEFT;
     params.x = DEFAULTX;
