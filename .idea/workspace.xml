@@ -107,8 +107,8 @@
       <file leaf-file-name="Converter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/org/gdgyangon/kanaung/Converter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38010204" vertical-offset="4369" max-vertical-offset="4770">
-              <caret line="251" column="43" selection-start-line="251" selection-start-column="43" selection-end-line="251" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.5510204" vertical-offset="4284" max-vertical-offset="4734">
+              <caret line="250" column="20" selection-start-line="250" selection-start-column="20" selection-end-line="250" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -2347,8 +2347,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/org/gdgyangon/kanaung/Converter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38010204" vertical-offset="4369" max-vertical-offset="4770">
-          <caret line="251" column="43" selection-start-line="251" selection-start-column="43" selection-end-line="251" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.5510204" vertical-offset="4284" max-vertical-offset="4734">
+          <caret line="250" column="20" selection-start-line="250" selection-start-column="20" selection-end-line="250" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
