@@ -27,6 +27,8 @@ public class FlyService extends Service{
   private ImageView chatHead;
   private WindowManager windowManager;
   private GestureDetector gestureDetector;
+  private int tempx = 10;
+  private int tempy = 100;
 
   private static final String TAG = "Kanaung";
 
@@ -94,6 +96,17 @@ public class FlyService extends Service{
     popupWindow = new PopupWindow(popupView, width, height);
     popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.popup_border));
     popupWindow.setFocusable(true);
+    popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+      @Override public void onDismiss() {
+        new Handler().postDelayed(new Runnable() {
+          @Override public void run() {
+            params.x = tempx;
+            params.y = tempy;
+            windowManager.updateViewLayout(chatHead,params);
+          }
+        },200);
+      }
+    });
   }
 
   @Override
@@ -137,9 +150,17 @@ public class FlyService extends Service{
     @Override
     public boolean onSingleTapConfirmed(MotionEvent event) {
       if (popupWindow.isShowing()) {
+        params.x=tempx;
+        params.y=tempy;
         popupWindow.dismiss();
+          new Handler().postDelayed(new Runnable() {
+            @Override public void run() {
+              windowManager.updateViewLayout(chatHead,params);
+            }
+          },200);
       } else {
-
+        tempx = ((WindowManager.LayoutParams)chatHead.getLayoutParams()).x;
+        tempy = ((WindowManager.LayoutParams)chatHead.getLayoutParams()).y;
         params.x=10;
         params.y=10;
         windowManager.updateViewLayout(chatHead,params);
