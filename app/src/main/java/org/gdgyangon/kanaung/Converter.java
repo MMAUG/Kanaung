@@ -246,15 +246,14 @@ public class Converter {
       return 0;
     }
 
-      String[] uni =
-          { "ှ", "ဿ", "ည်", "န်", "င်", "ေး", "ော", "်း", "ဵ", "[ၐ-ၙ]", "^([က-အ]ြ|[က-အ]ေ)" };
-    for (String anUni : uni) {
-      Pattern pattern = Pattern.compile(anUni);
+      String uni = "[^\\1031]စ် |\\u103e|\\u103f|\\u1031[^\\u1000-\\u1021\\u103b\\u1040\\u106a\\u106b\\u107e-\\u1084\\u108f\\u1090]|\\u1031$|\\u100b\\u1039|\\u1031[က-အ]\\u1032|\\u1025\\u102f|\\u103c\\u103d[\\u1000-\\u1001]";
+
+
+      Pattern pattern = Pattern.compile(uni);
       Matcher matcher = pattern.matcher(string);
       if (matcher.find()) {
         return 1;
       }
-    }
       return 2;
     }
 }
