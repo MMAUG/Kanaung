@@ -31,7 +31,7 @@ public class FlyService extends Service{
   private static final String TAG = "Kanaung";
 
   private static final int DEFAULTX = 10;
-  private static final int DEFAULTY = 100;
+  private static final int DEFAULTY = 200;
 
   private WindowManager.LayoutParams params;
 
@@ -73,7 +73,7 @@ public class FlyService extends Service{
         WindowManager windowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         Display display = windowManager.getDefaultDisplay();
         int width = display.getWidth();
-        int height = display.getHeight();
+        int height = (int)Math.round(display.getHeight()/1.2);
         popupWindow.update(width,height);
         popupWindow.setSoftInputMode(PopupWindow.INPUT_METHOD_NEEDED);
       }
@@ -139,8 +139,9 @@ public class FlyService extends Service{
       if (popupWindow.isShowing()) {
         popupWindow.dismiss();
       } else {
+
         params.x=10;
-        params.y=100;
+        params.y=10;
         windowManager.updateViewLayout(chatHead,params);
         new Handler().postDelayed(new Runnable() {
           @Override public void run() {

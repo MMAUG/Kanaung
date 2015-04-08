@@ -2,13 +2,10 @@ package org.gdgyangon.kanaung;
 
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.view.Display;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.PopupWindow;
 
 /**
  * Created by yemyatthu on 4/8/15.
@@ -97,19 +94,6 @@ public abstract class PopupViewHelper implements View.OnClickListener {
     }
   }
 
-  void clickFullScreen(PopupWindow popupWindow) {
-
-    onClickFullScreen();
-  }
-
-  void clickNormalScreen(PopupWindow popupWindow) {
-    WindowManager windowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
-    Display display = windowManager.getDefaultDisplay();
-    int width = display.getWidth() - 40;
-    int height = display.getHeight() / 2;
-    popupWindow.update(width,height);
-      onClickNormalScreen();
-  }
   public abstract void onClickFullScreen();
 
   public abstract void onClickNormalScreen();
