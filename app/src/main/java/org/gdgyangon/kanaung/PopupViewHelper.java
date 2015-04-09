@@ -1,12 +1,18 @@
 package org.gdgyangon.kanaung;
 
+import android.app.AlertDialog;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.Color;
+import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -38,6 +44,24 @@ public abstract class PopupViewHelper implements View.OnClickListener {
     inEditMode = false;
     mMagic.setVisibility(View.GONE);
     mEditButton.setOnClickListener(this);
+    mUnicodeEdit.setOnLongClickListener(new View.OnLongClickListener() {
+      @Override public boolean onLongClick(View view) {
+        String[] strings = {"Paste"};
+        TextView textView = new TextView(mContext);
+        textView.setBackgroundColor(Color.WHITE);
+
+        AlertDialog alertDialog = new AlertDialog.Builder(new ContextThemeWrapper(mContext,R.style.popup_theme)).setItems(strings,new DialogInterface.OnClickListener() {
+          @Override public void onClick(DialogInterface dialogInterface, int i) {
+            ClipboardManager clipboard = (ClipboardManager) mContext.getSystemService(Context.CLIPBOARD_SERVICE);
+            mUnicodeEdit.setText(clipboard.getText());
+            dialogInterface.dismiss();
+          }
+        }).create();
+        alertDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+        alertDialog.show();
+        return true;
+      }
+    });
     mFullScreenButton.setOnClickListener(this);
     return view;
   }
@@ -79,9 +103,9 @@ public abstract class PopupViewHelper implements View.OnClickListener {
         inFullScreen = true;
       }
     } else if (view.getId() == R.id.magic_button) {
-      if (mUnicodeEdit.getText().toString().contains("[Unicode]") && mUnicodeEdit.getText()
+      if (mUnicodeEdit.getText().toString().contains("<Unicode>") && mUnicodeEdit.getText()
           .toString()
-          .contains("[Zawgyi]")) {
+          .contains("<Zawgyi>")) {
         return;
       }
       if (mUnicodeEdit.getText().toString().length() > 0) {
@@ -92,20 +116,20 @@ public abstract class PopupViewHelper implements View.OnClickListener {
             toast.show();
             break;
           case 2:
-            mUnicodeEdit.setText("[Unicode]"
+            mUnicodeEdit.setText("<Unicode>"
                 + "\n"
                 + Converter.zg12uni51(mUnicodeEdit.getText().toString())
                 + "\n\n"
-                + "[Zawgyi]"
+                + "<Zawgyi>"
                 + "\n"
                 + mUnicodeEdit.getText());
             break;
           case 1:
-            mUnicodeEdit.setText("[Unicode]"
+            mUnicodeEdit.setText("<Unicode>"
                 + "\n"
                 + mUnicodeEdit.getText().toString()
                 + "\n\n"
-                + "[Zawgyi]"
+                + "<Zawgyi>"
                 + "\n"
                 + Converter.uni512zg1(mUnicodeEdit.getText().toString()));
         }
