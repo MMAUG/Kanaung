@@ -23,7 +23,7 @@ import org.gdgyangon.kanaung.R;
 
 import static android.view.GestureDetector.SimpleOnGestureListener;
 
-public class FlyService extends Service{
+public class FlyService extends Service {
   private PopupWindow popupWindow;
   private ImageView chatHead;
   private WindowManager windowManager;
@@ -51,7 +51,8 @@ public class FlyService extends Service{
 
     params = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT,
         WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_PHONE,
-        WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED|WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.TRANSLUCENT);
+        WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED
+            | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.TRANSLUCENT);
     params.softInputMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING;
     params.gravity = Gravity.TOP | Gravity.LEFT;
     params.x = DEFAULTX;
@@ -64,29 +65,31 @@ public class FlyService extends Service{
     windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
     windowManager.addView(chatHead, params);
 
-      gestureDetector = new GestureDetector(this, new FlyGestureListener());
-      chatHead.setOnTouchListener(new View.OnTouchListener() {
-        @Override
-        public boolean onTouch(View view, MotionEvent event) {
-          return gestureDetector.onTouchEvent(event);
-        }
-      });
+    gestureDetector = new GestureDetector(this, new FlyGestureListener());
+    chatHead.setOnTouchListener(new View.OnTouchListener() {
+      @Override
+      public boolean onTouch(View view, MotionEvent event) {
+        return gestureDetector.onTouchEvent(event);
+      }
+    });
     PopupViewHelper popupViewHelper = new PopupViewHelper(this) {
       @Override public void onClickFullScreen() {
-        WindowManager windowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        WindowManager windowManager =
+            (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         Display display = windowManager.getDefaultDisplay();
         int width = display.getWidth();
-        int height = (int)Math.round(display.getHeight()/1.2);
-        popupWindow.update(width,height);
+        int height = (int) Math.round(display.getHeight() / 1.2);
+        popupWindow.update(width, height);
         popupWindow.setSoftInputMode(PopupWindow.INPUT_METHOD_NEEDED);
       }
 
       @Override public void onClickNormalScreen() {
-        WindowManager windowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        WindowManager windowManager =
+            (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
         Display display = windowManager.getDefaultDisplay();
         int width = display.getWidth();
-        int height = display.getHeight()/2;
-        popupWindow.update(width,height);
+        int height = display.getHeight() / 2;
+        popupWindow.update(width, height);
       }
     };
     View popupView = popupViewHelper.getPopUpView();
@@ -103,9 +106,9 @@ public class FlyService extends Service{
           @Override public void run() {
             params.x = tempx;
             params.y = tempy;
-            windowManager.updateViewLayout(chatHead,params);
+            windowManager.updateViewLayout(chatHead, params);
           }
-        },200);
+        }, 200);
       }
     });
   }
@@ -151,26 +154,25 @@ public class FlyService extends Service{
     @Override
     public boolean onSingleTapConfirmed(MotionEvent event) {
       if (popupWindow.isShowing()) {
-        params.x=tempx;
-        params.y=tempy;
+        params.x = tempx;
+        params.y = tempy;
         popupWindow.dismiss();
-          new Handler().postDelayed(new Runnable() {
-            @Override public void run() {
-              windowManager.updateViewLayout(chatHead,params);
-            }
-          },200);
-      } else {
-        tempx = ((WindowManager.LayoutParams)chatHead.getLayoutParams()).x;
-        tempy = ((WindowManager.LayoutParams)chatHead.getLayoutParams()).y;
-        params.x=10;
-        params.y=10;
-        windowManager.updateViewLayout(chatHead,params);
         new Handler().postDelayed(new Runnable() {
           @Override public void run() {
-            popupWindow.showAsDropDown(chatHead,10,10);
+            windowManager.updateViewLayout(chatHead, params);
           }
-        },200);
-
+        }, 200);
+      } else {
+        tempx = ((WindowManager.LayoutParams) chatHead.getLayoutParams()).x;
+        tempy = ((WindowManager.LayoutParams) chatHead.getLayoutParams()).y;
+        params.x = 10;
+        params.y = 10;
+        windowManager.updateViewLayout(chatHead, params);
+        new Handler().postDelayed(new Runnable() {
+          @Override public void run() {
+            popupWindow.showAsDropDown(chatHead, 10, 10);
+          }
+        }, 200);
       }
 
       return true;
@@ -189,7 +191,7 @@ public class FlyService extends Service{
 
   public void createNotification() {
     NotificationCompat.Builder mBuilder =
-        new NotificationCompat.Builder(this).setSmallIcon(R.drawable.unicode)
+        new NotificationCompat.Builder(this).setSmallIcon(R.drawable.ic_launcher)
             .setContentTitle(getString(R.string.app_name))
             .setContentText("Kanaung is running.");
     Intent resultIntent = new Intent(getApplicationContext(), MainActivity.class);
