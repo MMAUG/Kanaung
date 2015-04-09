@@ -1,4 +1,4 @@
-package org.gdgyangon.kanaung;
+package org.mmaug.kanaung;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;

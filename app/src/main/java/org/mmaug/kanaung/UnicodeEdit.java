@@ -1,4 +1,4 @@
-package org.gdgyangon.kanaung;
+package org.mmaug.kanaung;
 
 import android.content.Context;
 import android.text.method.ScrollingMovementMethod;

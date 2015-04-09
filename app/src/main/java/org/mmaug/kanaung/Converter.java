@@ -1,4 +1,4 @@
-package org.gdgyangon.kanaung;
+package org.mmaug.kanaung;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

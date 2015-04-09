@@ -1,4 +1,4 @@
-package org.gdgyangon.kanaung;
+package org.mmaug.kanaung;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -31,9 +31,12 @@ public class AboutActivity extends ActionBarActivity {
     setContentView(R.layout.about);
     Toolbar toolbar = (Toolbar) findViewById(R.id.about_toolbar);
     setSupportActionBar(toolbar);
+    getSupportActionBar().setTitle("About Kanaung");
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     TextView opensources = (TextView) findViewById(R.id.open_source);
     TextView maug = (TextView) findViewById(R.id.maug);
+    TextView version = (TextView) findViewById(R.id.version);
+    version.setText("Kanaung Version "+BuildConfig.VERSION_NAME);
     maug.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
         Intent fbIntent = getOpenFacebookIntent(AboutActivity.this);
