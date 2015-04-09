@@ -18,7 +18,6 @@ public class Util {
     DisplayMetrics metrics = resources.getDisplayMetrics();
     float px = dp * (metrics.densityDpi / 160f);
     return px;
-
   }
 
   public static float convertDpToPixel(float dp, final Context context) {
@@ -29,10 +28,8 @@ public class Util {
         f = calculateDpToPixel(dp, context);
         pxCache.put(dp, f);
       }
-
     }
 
     return f;
   }
-
 }

@@ -5,16 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal">
+
   <include
       android:id="@+id/about_toolbar"
       layout="@layout/toolbar"/>
-<ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="120dp"
-    android:background="@drawable/circle"
-    android:padding="@dimen/padding_large"
-    android:src="@drawable/unicode"/>
+
+  <ImageView
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:layout_marginTop="120dp"
+      android:padding="@dimen/padding_large"
+      android:contentDescription="@string/icon"
+      android:src="@drawable/web_hi_res_512"/>
+
   <TextView
       android:id="@+id/version"
       android:layout_width="wrap_content"
@@ -37,5 +40,5 @@
       android:padding="@dimen/padding_large"
       android:background="?android:attr/selectableItemBackground"
       android:textColor="@color/textColorLink"
-      android:text="Open Source Licenses"/>
+      android:text="@string/about_licenses"/>
 </LinearLayout>
