@@ -152,7 +152,7 @@ MERGED from com.google.android.gms:play-services-base:7.0.0:21:9
 		ADDED from AndroidManifest.xml:16:18
 	android:value
 		ADDED from AndroidManifest.xml:17:11
-activity#org.gdgyangon.kanaung.MainActivity
+activity#org.mmaug.kanaung.MainActivity
 ADDED from AndroidManifest.xml:19:9
 	android:screenOrientation
 		ADDED from AndroidManifest.xml:22:13
@@ -170,7 +170,7 @@ category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:25:17
 	android:name
 		ADDED from AndroidManifest.xml:25:27
-activity#org.gdgyangon.kanaung.AboutActivity
+activity#org.mmaug.kanaung.AboutActivity
 ADDED from AndroidManifest.xml:28:7
 	android:screenOrientation
 		ADDED from AndroidManifest.xml:31:11
@@ -178,7 +178,7 @@ ADDED from AndroidManifest.xml:28:7
 		ADDED from AndroidManifest.xml:30:11
 	android:name
 		ADDED from AndroidManifest.xml:29:11
-service#org.gdgyangon.kanaung.FlyService
+service#org.mmaug.kanaung.FlyService
 ADDED from AndroidManifest.xml:33:9
 	android:exported
 		ADDED from AndroidManifest.xml:35:13

@@ -1,4 +1,4 @@
-package org.gdgyangon.kanaung;
+package org.mmaug.kanaung;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import org.gdgyangon.kanaung.R;
 
 import static android.view.GestureDetector.SimpleOnGestureListener;
 

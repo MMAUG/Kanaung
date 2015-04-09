@@ -1,4 +1,4 @@
-package org.gdgyangon.kanaung;
+package org.mmaug.kanaung;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.TextView;
+import org.gdgyangon.kanaung.R;
 
 /**
  * Created by yemyatthu on 4/7/15.

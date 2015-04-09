@@ -1,4 +1,4 @@
-package org.gdgyangon.kanaung;
+package org.mmaug.kanaung;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
+import org.gdgyangon.kanaung.R;
 
 public class MainActivity extends ActionBarActivity {
 

@@ -1,9 +1,10 @@
-package org.gdgyangon.kanaung;
+package org.mmaug.kanaung;
 
 import android.app.Application;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 import java.util.HashMap;
+import org.gdgyangon.kanaung.R;
 
 /**
  * Created by yemyatthu on 4/9/15.

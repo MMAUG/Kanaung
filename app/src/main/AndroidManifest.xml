@@ -9,7 +9,7 @@
         android:allowBackup="true"
         android:icon="@drawable/unicode"
         android:label="@string/app_name"
-        android:name=".Kanaung"
+        android:name="org.mmaug.kanaung.Kanaung"
         android:theme="@style/KanaungTeme"
         android:hardwareAccelerated="true">
 
@@ -17,7 +17,7 @@
           android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name="org.gdgyangon.kanaung.MainActivity"
+            android:name="org.mmaug.kanaung.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -26,12 +26,12 @@
             </intent-filter>
         </activity>
       <activity
-          android:name="org.gdgyangon.kanaung.AboutActivity"
+          android:name="org.mmaug.kanaung.AboutActivity"
           android:label="@string/app_name"
           android:screenOrientation="portrait">
       </activity>
         <service
-            android:name="org.gdgyangon.kanaung.FlyService"
+            android:name="org.mmaug.kanaung.FlyService"
             android:exported="true"/>
     </application>
 
