@@ -1,7 +1,7 @@
 package org.gdgyangon.kanaung;
 
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -18,7 +20,15 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+    // Get tracker.
+    Tracker t = ((Kanaung)getApplication()).getTracker(
+        Kanaung.TrackerName.APP_TRACKER);
 
+    // Set screen name.
+    t.setScreenName("Main Activity");
+
+    // Send a screen view.
+    t.send(new HitBuilders.ScreenViewBuilder().build());
 
 		Bundle bundle = getIntent().getExtras();
 

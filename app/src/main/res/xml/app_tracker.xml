@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <integer name="ga_sessionTimeout">300</integer>
+
+  <!-- Enable automatic Activity measurement -->
+  <bool name="ga_autoActivityTracking">true</bool>
+  <screenName name="org.gdgyangon.kanaung.MainActivity">
+    Main Activity
+  </screenName>
+  <!--  The following value should be replaced with correct property id. -->
+  <string name="ga_trackingId">UA-59295910-2</string>
+</resources>
