@@ -9,30 +9,30 @@ Floating Myanmar Font Converter
 
 - စာကို copy ကူးပါ
 
-![Copying The Text](/screenshots/copy.png width="720")
+<img src="/screenshots/copy.png" alt="Copying The Text" style="width:720">
 
 - KN Floating Button ကို နှိပ်ပါ Convert လုပ်ထားသော စာများကို မြင်ရမှာ ဖြစ်ပါတယ်
 
-![Converted Text](/screenshots/converted.png width="720")
+<img src="/screenshots/converted.png" alt="Converted Text" style="width:720">
 
 
 ### Writing
 
 - စာရေးလိုလှျင် Write Button ကို နှိပ်ပါ
 
-![Converted Text](/screenshots/write.png width="720")
+<img src="/screenshots/write.png" alt="Write" style="width:720">
 
 - မိမိရေးလိုသော စာရေး၍ MAGIC! ကို နှိပ်ပါ
 
-![Converted Text](/screenshots/magic.png width="720")
+<img src="/screenshots/magic.png" alt="Magic!" style="width:720">
 
 - အားလုံးပြီးလျှင် Save ကို နှိပ်ပါ။
 
-![Press Save](/screenshots/save.png width="720")
+<img src="/screenshots/save.png" alt="Press Save" style="width:720">
 
 - မိမိလိုသောနေရာတွင် Paste လုပ်နိုင်ပါပြီ။
 
-![You can now paste where you want](/screenshots/paste.png width="720")
+<img src="/screenshots/paste.png" alt="You can now paste where you want" style="width:720">
 
 
 ## License
