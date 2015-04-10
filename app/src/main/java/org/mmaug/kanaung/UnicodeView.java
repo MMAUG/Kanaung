@@ -24,7 +24,9 @@ public class UnicodeView extends TextView {
         ClipboardManager manager = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
         CharSequence copiedText = manager.getText();
         if (copiedText == null)      {
-          setText(R.string.nothing_copied);}
+          setText(R.string.nothing_copied);
+          return;
+        }
               Log.d("dada", String.valueOf(Converter.detector(copiedText.toString())));
               switch (Converter.detector(copiedText.toString())){
 
@@ -39,6 +41,7 @@ public class UnicodeView extends TextView {
                   break;
                 default:
                   setText(Converter.zg12uni51(copiedText.toString()));
+                  break;
 
 
         }
