@@ -13,12 +13,12 @@ Floating Myanmar Font Converter
 
 - KN Floating Button ကို နှိပ်ပါ Convert လုပ်ထားသော စာများကို မြင်ရမှာ ဖြစ်ပါတယ်
 
-<img src="/screenshots/converted.png" alt="Converted Text" style="width:720">
+<img src="/screenshots/converted.png" alt="Converted Text" style="width:720px">
 
 
 ### Writing
 
-- စာရေးလိုလှျင် Write Button ကို နှိပ်ပါ
+- စာရေးလိုလျှင် Write Button ကို နှိပ်ပါ
 
 <img src="/screenshots/write.png" alt="Write" style="width:720">
 
@@ -32,7 +32,7 @@ Floating Myanmar Font Converter
 
 - မိမိလိုသောနေရာတွင် Paste လုပ်နိုင်ပါပြီ။
 
-<img src="/screenshots/paste.png" alt="You can now paste where you want" style="width:720">
+<img src="/screenshots/paste.png" alt="You can now paste where you want" style="width:720px">
 
 
 ## License
