@@ -13,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.TextView;
-import org.gdgyangon.kanaung.R;
 
 /**
  * Created by yemyatthu on 4/7/15.
@@ -32,9 +31,12 @@ public class AboutActivity extends ActionBarActivity {
     setContentView(R.layout.about);
     Toolbar toolbar = (Toolbar) findViewById(R.id.about_toolbar);
     setSupportActionBar(toolbar);
+    getSupportActionBar().setTitle("About Kanaung");
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     TextView opensources = (TextView) findViewById(R.id.open_source);
     TextView maug = (TextView) findViewById(R.id.maug);
+    TextView version = (TextView) findViewById(R.id.version);
+    version.setText("Kanaung Version "+BuildConfig.VERSION_NAME);
     maug.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View view) {
         Intent fbIntent = getOpenFacebookIntent(AboutActivity.this);

@@ -6,7 +6,6 @@ import android.text.method.ScrollingMovementMethod;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.TextView;
-import org.gdgyangon.kanaung.R;
 
 /**
  * Created by trhura on 10/22/14.
