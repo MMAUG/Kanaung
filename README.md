@@ -1,39 +1,10 @@
 # Kanaung
 
-
 Floating Myanmar Font Converter
 
-## အသုံးပြုနည်း
+## How To Use
 
-### Font Converting
-
-- စာကို copy ကူးပါ
-
-<img src="/screenshots/copy.png" alt="Copying The Text" style="width:480">
-
-- KN Floating Button ကို နှိပ်ပါ Convert လုပ်ထားသော စာများကို မြင်ရမှာ ဖြစ်ပါတယ်
-
-<img src="/screenshots/converted.png" alt="Converted Text" style="width:480">
-
-
-### Writing
-
-- စာရေးလိုလျှင် Write Button ကို နှိပ်ပါ
-
-<img src="/screenshots/write.png" alt="Write" style="width:480">
-
-- မိမိရေးလိုသော စာရေး၍ MAGIC! ကို နှိပ်ပါ
-
-<img src="/screenshots/magic.png" alt="Magic!" style="width:480">
-
-- အားလုံးပြီးလျှင် Save ကို နှိပ်ပါ။
-
-<img src="/screenshots/save.png" alt="Press Save" style="width:480">
-
-- မိမိလိုသောနေရာတွင် Paste လုပ်နိုင်ပါပြီ။
-
-<img src="/screenshots/paste.png" alt="You can now paste where you want" style="width:480">
-
+You can read about "How To" at [Wiki](https://github.com/MMAUG/Kanaung/wiki)
 
 ## License
 GPLv3
