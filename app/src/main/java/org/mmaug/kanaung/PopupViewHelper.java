@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 /**
  * Created by yemyatthu on 4/8/15.
  */
@@ -53,7 +52,9 @@ public abstract class PopupViewHelper implements View.OnClickListener {
         AlertDialog alertDialog = new AlertDialog.Builder(new ContextThemeWrapper(mContext,R.style.popup_theme)).setItems(strings,new DialogInterface.OnClickListener() {
           @Override public void onClick(DialogInterface dialogInterface, int i) {
             ClipboardManager clipboard = (ClipboardManager) mContext.getSystemService(Context.CLIPBOARD_SERVICE);
+            if(clipboard.getText()!=null){
             mUnicodeEdit.setText(clipboard.getText());
+            }
             dialogInterface.dismiss();
           }
         }).create();
